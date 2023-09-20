@@ -1,0 +1,239 @@
+
+{% if call_text_homepage %}
+<!DOCTYPE html>
+<!-- {% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}"> -->
+<html>
+<head>
+
+<meta name="viewport" content= 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0' /> 
+<!-- <meta name="viewport" content="width=device-width,inital-scale=1.0">-->
+<meta charset="utf-8">
+
+
+<style>
+
+.rectangle {
+  height: 350px;
+  width: 300px;
+  background-color: #d90f0f;
+}
+
+
+
+/* button css */
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+a:hover, a:active {
+  background-color: purple;
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: white;
+  color: black;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(128, 0, 128);
+  color: white;
+}
+
+    body{
+
+    background-color: rgb(200, 210, 213);
+    color: rgb(0, 0, 0);  /*this controls page text colour */
+    
+
+    margin: 0;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+
+        font-family: 'Trebuchet MS';
+        font-size: 20px;
+        font-weight: bold;
+
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 1fr 1fr 100px;
+
+        gap: 5px;
+
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .container div{
+
+        padding:10px;
+        border: 3px solid #000
+
+    }
+
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        background-color: purple;
+    }
+
+    .a1 {
+        grid-row-start: 2;
+        grid-row-end: span 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background-color: purple;
+    }
+
+    .a2{
+        grid-row-start: 2;
+        grid-row-end: span 2;
+        grid-column-start: 2;
+        grid-column-end: 6;
+       
+     }
+
+
+    .footer {
+
+        grid-column: 1/6; /* This will allow the footer to span all 6 columbs*/
+        color: #ffffff;
+        background-color: rgb(0, 0, 0);
+        font-size:15px;
+        text-align: center
+    }
+
+    .shield {
+        border-radius: 8px;  /*this code controlls the image in the top right  - removed - object-fit: cover;*/
+        float: right;
+        height: 100%;
+        position: relative;
+    }
+
+    .logo {
+        /*border-radius: 8px;  this code controlls the image in the top right*/
+        /*float: Center;
+        scale: 50%;*/
+        /*text-align: center;*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: 50%;*/
+    }
+
+    .slideshowimage1 {
+
+        /* border-radius: 8px;   */
+        float: center;
+        object-fit: cover;
+
+        height: 100%;
+        width: 100%;
+
+     } 
+           
+
+     .logintitletext{
+
+        border: none !important;
+        color: #ffffff;
+        font-size:22px;
+        text-align: center;
+     }
+
+
+     .logintext{
+
+    border: none !important;
+    color: #ffffff;
+    font-size:15px;
+    text-align: left;
+    }
+    
+    marquee {
+    object-fit: cover;
+    border: none;
+    color: #ffffff;
+    font-size:15px;
+    position:relative;
+    right:300px;
+    top:0px;
+    height:550px;
+    top: -25px;
+    
+    }
+  
+    
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header" >
+            
+            
+            <img src= "https://learn.lboro.ac.uk/extra/images/LU-mark-white.png"  class = "shield" alt="The loughborough coat of arms">
+           
+            <marquee scrollamount="14">Welcome to the Branch Homepage</marquee>
+            
+        </div>
+        <div class="a1" >
+             
+            <br>
+            <img src="https://i.ibb.co/bbKbM4y/tree3.jpg" class = "logo" alt="tree3" >
+            <br>
+            <br>
+            <div class="logintitletext"> Welcome to Branch </div>
+            <br>
+                    
+            <form action="https://example.com/form-handler.php">
+                <label for="student_id"> <div class="logintext">Student ID:</div></label>
+                <input type="text" id="student_id" name="student_id" ><br>
+                <label for="student_password"> <div class="logintext">Password:</div></label>
+                <input type="text" id="student_password" name="student_password" ><br><br>
+                <input type="submit" value="Enter">
+            </form> 
+
+            <a href="{% url 'polls:create_nu_page' %}">Create New User</a>
+
+        </div>
+        
+        <div class="a2" >
+           
+             <img src= "https://www.lboro.ac.uk/media/media/schoolanddepartments/D5232-009-departments.jpg" 
+                class = "slideshowimage1" alt="A nice picture of the loughborough fountain">
+           </div>  
+                                         <!--  <br> allows me to start a new line in my on page text-->
+        <div class="footer" >If you have any questions reguarding information security or would like to request access to your data please contect us,<br> 
+                                                 Here at Branch we are commited to data saftey<br>
+                                    Return to Loughborough University Learn home: https://learn.lboro.ac.uk/ 
+        </div>
+        
+    </div>
+
+
+</body>
+</html>
+{% endif %}
+

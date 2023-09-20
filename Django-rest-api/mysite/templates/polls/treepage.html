@@ -1,0 +1,470 @@
+{% if call_text_treepage %}
+
+
+<!DOCTYPE html>
+<!-- {% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}"> -->
+<html>
+<head>
+
+<meta name="viewport" content= 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0' /> 
+<!-- <meta name="viewport" content="width=device-width,inital-scale=1.0">-->
+<meta charset="utf-8">
+
+
+<style>
+
+.rectangle {
+  height: 350px;
+  width: 300px;
+  background-color: #d90f0f;
+}
+
+
+
+/* button css */
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+a:hover, a:active {
+  background-color: purple;
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: white;
+  color: black;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(128, 0, 128);
+  color: white;
+}
+
+    body{
+
+    background-color: rgb(200, 210, 213);
+    color: rgb(0, 0, 0);  /*this controls page text colour */
+    
+
+    margin: 0;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+
+        font-family: 'Trebuchet MS';
+        font-size: 20px;
+        font-weight: bold;
+
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 1fr 1fr 100px;
+
+        gap: 5px;
+
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .container div{
+
+        padding:10px;
+        border: 3px solid #000
+
+    }
+
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        background-color: purple;
+    }
+
+    .a1 {
+        grid-row-start: 2;
+        grid-row-end: span 4;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        background-color: purple;
+    }
+
+    .a2{
+        grid-row-start: 2;
+        grid-row-end: span 4;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        background-color: rgb(206, 228, 227);
+     }
+
+
+   
+
+    .shield {
+        border-radius: 8px;  /*this code controlls the image in the top right  - removed - object-fit: cover;*/
+        float: right;
+        height: 100%;
+        position: relative;
+    }
+
+    .logo {
+        /*border-radius: 8px;  this code controlls the image in the top right*/
+        /*float: Center;
+        scale: 50%;*/
+        /*text-align: center;*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: 50%;*/
+    }
+
+    .slideshowimage1 {
+
+        /* border-radius: 8px;   */
+        float: center;
+        object-fit: cover;
+
+        height: 100%;
+        width: 100%;
+
+     } 
+           
+
+     .logintitletext{
+
+        border: none !important;
+        color: #ffffff;
+        font-size:22px;
+        text-align: center;
+     }
+
+
+     .logintext{
+
+    border: none !important;
+    color: #ffffff;
+    font-size:15px;
+    text-align: left;
+    }
+    
+    marquee {
+    object-fit: cover;
+    border: none;
+    color: #ffffff;
+    font-size:15px;
+    position:relative;
+    right:300px;
+    top:0px;
+    height:550px;
+    top: -25px;
+    
+    }
+  
+    .boxa {
+    position: relative;
+    top: 50px;
+    left: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxb {
+    position: relative;
+    top: 180px;
+    left: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxc {
+    position: relative;
+    top: 310px;
+    left: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxd {
+    position: relative;
+    top: -175px;
+    left: 300px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxe {
+    position: relative;
+    top: -45px;
+    left: 300px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxf {
+    position: relative;
+    top: 85px;
+    left: 300px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxg {
+    position: relative;
+    top: -400px;
+    left: 590px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxh {
+    position: relative;
+    top: -270px;
+    left: 590px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxi {
+    position: relative;
+    top: -140px;
+    left: 590px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxj {
+    position: relative;
+    top: -625px;
+    left: 880px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxk {
+    position: relative;
+    top: -495px;
+    left: 880px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    .boxl {
+    position: relative;
+    top: -365px;
+    left: 880px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(240, 245, 194);
+    padding: 10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    }
+    
+    .example_module_text{
+    border: none !important;
+    color: #000000;
+    font-size:12px;
+    text-align: center;
+    line-height: 30px;
+    }
+
+    .titletext{
+    border: none !important;
+    color: #e6e4e4;
+    font-size:7px;
+    text-align: left;
+    line-height: 30px;
+    text-decoration: underline;
+    font-family: "Trebuchet MS", sans-serif;
+    }
+    
+    .circle {
+        position: relative;
+        top: 10px;
+        left: 70px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+    }
+
+    .skilltext{
+    border: none !important;
+    color: #000000;
+    font-size:13px;
+    text-align: left;
+    line-height: 30px;
+    text-decoration: underline;
+    font-family: "Trebuchet MS", sans-serif;
+    }
+
+    .pietext{
+    border: none !important;
+    color: #ffffff;
+    font-size:18px;
+    text-align: center;
+    line-height: 70px;
+    text-decoration: underline;
+    font-family: "Trebuchet MS", sans-serif;
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header" >
+            
+            
+            <img src= "https://learn.lboro.ac.uk/extra/images/LU-mark-white.png"  class = "shield" alt="The loughborough coat of arms">
+           
+            <marquee scrollamount="14">Welcome to the Branch Tree Page, Select a module to see which are best suited to follow or herald it</marquee>
+            
+        </div>
+        <div class="a1" > <!-- LEFT BOX-->
+
+
+            <div class="titletext" >
+            <h1> Part A: Semester 1 | Part A: Semester 2 | Part B: Semester 1 | Part B: Semester 2 | Part C: Semester 1 | Part C: Semester 2 | Part D: Semester 1 | Part D: Semester 2 |</h1>
+            </div>
+
+
+            <div class="boxa"> 
+                <div class="example_module_text"> Example Part A Module </div> 
+            </div>
+            <div class="boxb">
+                <div class="example_module_text"> Example Part A Module </div> 
+            </div>
+            <div class="boxc">
+                <div class="example_module_text"> Example Part A Module </div> 
+            </div>
+            <div class="boxd">
+                <div class="example_module_text"> Example Part B Module </div> 
+            </div>
+            <div class="boxe">
+                <div class="example_module_text"> Example Part B Module </div> 
+            </div>
+            <div class="boxf">
+                <div class="example_module_text"> Example Part B Module </div> 
+            </div>
+            <div class="boxg">
+                <div class="example_module_text"> Example Part C Module </div> 
+            </div>
+            <div class="boxh">
+                <div class="example_module_text"> Example  Part C Module </div> 
+            </div>
+            <div class="boxi">
+                <div class="example_module_text"> Example  Part C Module </div> 
+            </div>
+            <div class="boxj">
+                <div class="example_module_text"> Example  Part D Module </div> 
+            </div>
+            <div class="boxk">
+                <div class="example_module_text"> Example  Part D Module </div> 
+            </div>
+            <div class="boxl">
+                <div class="example_module_text"> Example  Part D Module </div> 
+            </div>
+
+            
+        
+            
+                    
+            
+
+        
+
+        </div>
+        
+       
+       
+        <div class="a2" > <!-- RIGHT BOX-->
+           
+            <div>User stats:
+               <div class="skilltext"> Technical skills        : 0 </div> 
+               <div class="skilltext">Communication skills     : 0 </div> 
+               <div class="skilltext">Mathmatical skills       : 0 </div> 
+               <div class="skilltext">Coding skills            : 0 </div> 
+               <div class="skilltext">Project mangment skills  : 0 </div> 
+               <div class="skilltext">Professional development : 0 </div> 
+                
+
+
+
+
+            </div>
+
+            <div>User skill weighting</div>
+            <div class="circle"><div class="pietext">Pie Chart</div></div>
+
+            <br>
+
+            <div>Generic user information:
+                Name:John Doe
+                Part: A
+                Semester: 1
+                </div>
+             
+           </div>  
+                               
+        
+    </div>
+
+
+</body>
+</html>
+
+
+
+{% endif %}

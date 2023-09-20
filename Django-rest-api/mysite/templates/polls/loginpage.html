@@ -1,0 +1,38 @@
+{% load static %} 
+{% if call_text_loginpage %}
+  
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type= "text/css" href ="{% static 'polls/style.css' %}">
+    
+    
+    
+</head>
+<body>
+    <h1 class = "test"> login page test cat!!!!</h1>
+<p>Bottom text!</p>
+
+<a href="{% url 'polls:homepage' %}">homepage button</a>.
+<br/><br/>
+
+
+<h1>This is a Heading</h1>
+
+<h1>This is a Heading</h1>
+
+<p>This is a paragraph.</p>
+
+<script>  //JS is included inside the script segment
+document.getElementsByTagName("h1")[0].innerHTML = "Hello World!";
+</script>
+
+
+
+</body>
+
+</html>
+
+{% endif %}
